@@ -1,3 +1,4 @@
+
 .booyah-box {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
@@ -25,4 +26,9 @@ body {
   background:url('/assets/gray_sand.png');
   border-radius: 0;
   box-shadow: 0px 2px 3px #2a2a2a;
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-brand:hover {
+  color: #CC660C;
+  font-family: 'sinkin_sans500_medium';
 }
