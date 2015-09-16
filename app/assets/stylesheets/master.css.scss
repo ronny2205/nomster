@@ -32,3 +32,11 @@ body {
   color: #CC660C;
   font-family: 'sinkin_sans500_medium';
 }
+
+.next_page, .previous_page {
+  font-family: 'sinkin_sans400_regular';
+}
+
+ a.next_page, a.previous_page {
+    color: #CC660C;
+  }
