@@ -1,5 +1,5 @@
 <div class="booyah-box col-xs-10 col-xs-offset-1">	
-	<h1><%=  @place.name %></h1>
+	<h1 class="text-orange"><%=  @place.name %></h1>
 	<i><%= @place.address %></i>
 	<br/><br/>
 	<p><%= @place.description %></p>
@@ -60,6 +60,7 @@
       <%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
         <div class="modal-body">
           <%= f.input :picture %>
+          <br/>
           <%= f.input :caption %>
         </div>
         <div class="modal-footer">
@@ -92,7 +93,7 @@
   	  	<%= image_tag photo.picture, :class => 'img-responsive img-rounded' %>
   	  <div class="clear"></div>
   	  <br/>	
-      <b><%= photo.caption %></b>  
+      <b><i><%= photo.caption %></i></b>  
   </div>
 </div>
 <% end %>
@@ -113,6 +114,7 @@
       <%= simple_form_for @comment, :url => place_comments_path(@place) do |f| %>
         <div class="modal-body">
           <%= f.input :message %>
+          <br/>
           <%= f.input :rating, :as => :select, :collection => Comment::RATINGS %>
         </div>
         <div class="modal-footer">
@@ -128,7 +130,7 @@
 <br/>
 <br/>
 <div class="col-xs-10 col-xs-offset-1">
-	<h1 class="pull-left">Comments</h1>
+	<h1 class="pull-left text-orange">Comments</h1>
 	<!-- Button trigger modal -->
 	<button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal_2">
 	  Add a comment
