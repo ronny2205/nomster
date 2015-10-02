@@ -1,13 +1,14 @@
 
 <div class="booyah-box col-xs-12 col-sm-10 col-sm-offset-1">
-	<div class="col-xs-4">
-		<div class=" col-xs-offset-0 col-sm-offset-1">
+	<div class="col-xs-12 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+		<div class="col-xs-offset-1 col-sm-offset-1">
 			<%= image_tag 'user.png' %>
 		</div>	
 		<h4 class="text-orange"><%= @user.email %></h4>
+		<br/>
 	</div>
 	
-	<div class="col-xs-7 col-xs-offset-1 col-sm-5 col-sm-offset-1">
+	<div class="col-xs-12 col-xs-offset-0 col-sm-5 col-sm-offset-1">
 		
 		<h4 class="text-center">Member Since: <%= @user.created_at.strftime("%B %d, %Y") %></h4>
 		<hr>
