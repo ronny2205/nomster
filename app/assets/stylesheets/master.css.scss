@@ -29,26 +29,27 @@ hr {
 }
 
 body {
-  background: url('/assets/fresh_snow.png');
+  //background: url('/assets/fresh_snow.png');
 
   font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
 }
 
-.navbar.navbar-inverse {
-  background:url('/assets/gray_sand.png');
+.navbar {
+  background: #25FA00;
   border-radius: 0;
-  box-shadow: 0px 2px 3px #2a2a2a;
+  //box-shadow: 0px 2px 3px #25FA00;
   margin-bottom: 0;
 }
 
-.navbar-inverse .navbar-brand, .navbar-inverse {
-  color: #CC660C;
+.navbar .navbar-brand, .navbar {
+  //color: #CC660C;
+  color: #FFF;
   font-family: 'sinkin_sans500_medium';
 }
 
-.navbar-inverse .navbar-nav>li>a {
-//.navbar-inverse .new-place {
-  color: #CC660C;
+.navbar .navbar-nav>li>a {
+  //color: #CC660C;
+  color: #FFF;
   font-family: 'sinkin_sans200_x_light';
 }
 
