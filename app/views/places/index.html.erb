@@ -1,7 +1,14 @@
 <div class="container">
+ <br/>
+ <h4> Browse through the restaurant listings or add another</h4>
 
-<%= will_paginate @places, :page_links => false %>
-
+  <%= link_to new_place_path, :class => 'btn btn-success add-restaurant' do %>
+    Add a restaurant
+  <% end %> 
+  
+  <span class="pull-right">
+    <%= will_paginate @places, :page_links => false %>
+  </span>
 
 <!-- <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> -->
   <!-- Indicators -->
@@ -47,7 +54,7 @@
 <% @places.each do |place| %>
 <div class="clear"></div>
 <div class="booyah-box col-xs-6">
-	<h1><%= link_to place.name, place_path(place) %></h1><br />
+	<h1 class="text-green"><%= link_to place.name, place_path(place) %></h1><br />
 	
 	<!-- <div class="col-xs-12 col-sm-4">  -->
 		<i><%= place.address %></i><br /><br />
