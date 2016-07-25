@@ -1,7 +1,6 @@
 <div class="container">
- <br/>
- <h4> Browse through the restaurant listings or add another</h4>
-
+ 
+ <div class="row">
   <%= link_to new_place_path, :class => 'btn btn-success add-restaurant' do %>
     Add a restaurant
   <% end %> 
@@ -9,6 +8,11 @@
   <span class="pull-right">
     <%= will_paginate @places, :page_links => false %>
   </span>
+ </div>
+
+ <div class="row">
+  <h4 class="browse-title"> Browse through the restaurant listings or add another</h4>
+ </div> 
 
 <!-- <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> -->
   <!-- Indicators -->
@@ -53,7 +57,8 @@
 <div class="clear"></div>
 <% @places.each do |place| %>
 <div class="clear"></div>
-<div class="booyah-box col-xs-6">
+<div class="row">
+ <div class="booyah-box col-xs-6">
 	<h1 class="text-green"><%= link_to place.name, place_path(place) %></h1><br />
 	
 	<!-- <div class="col-xs-12 col-sm-4">  -->
@@ -66,7 +71,8 @@
 	<!-- <div/> -->    
 
 	<div class="clear"></div>
-	    <%if place.photos.present? %>
+	    <% if place.photos.present? %>
+       <div class="row">
 	    	<div class="col-xs-12 col-sm-4 col-sm-offset-0">
 	  			<div class="booyah-box">
 	  	  			<%= image_tag place.photos.last.picture, :class => 'img-responsive img-rounded' %>
@@ -74,12 +80,14 @@
 	  	  			<br/>	
 	      			<b><%= place.photos.last.caption %></b>  
 	  			</div>
-			</div>
+			  </div>
+       </div> 
 	    <% end %>
 	  
 
 
     <% if place.comments.present? %>
+     <div class="row">
 	    <div class="col-xs-12">
 		    <blockquote>
 		      <% if place.comments.last.humanized_rating.present? %>
@@ -89,9 +97,10 @@
 		      <small><%= place.comments.last.user.email %></small>
 		    </blockquote>
 	  	</div>
+     </div> 
 	  <% end %>	
-</div>
-
+  </div>
+ </div>
 <% end %>
 
 </div>
