@@ -21,6 +21,10 @@
   padding:20px;
 }
 
+.booyah-box>h1>a {
+  //color: #94F00A;
+  color: #5cb85c;
+}
 
 h1, h2, h3, h4, h5, h6 {
   margin:0;
@@ -37,7 +41,9 @@ hr {
 body {
   //background: url('/assets/fresh_snow.png');
 
-  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  font-family: 'sinkin_sans400_regular';
+
+  //font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans //Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus //Mono L", Monaco, "Courier New", Courier, monospace;
 }
 
 .navbar {
@@ -146,7 +152,7 @@ blockquote p {
   margin-top: 20px;
 }
 
-.text-green a.text-green {
+.text-green {
    color: #94F00A;
  }
 

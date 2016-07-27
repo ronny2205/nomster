@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container"> -->
  
  <div class="row">
   <%= link_to new_place_path, :class => 'btn btn-success add-restaurant' do %>
@@ -59,16 +59,15 @@
 <div class="clear"></div>
 <div class="row">
  <div class="booyah-box col-xs-6">
-	<h1 class="text-green"><%= link_to place.name, place_path(place) %></h1><br />
+	<h1><%= link_to place.name, place_path(place) %></h1><br />
 	
-	<!-- <div class="col-xs-12 col-sm-4">  -->
 		<i><%= place.address %></i><br /><br />
 		<p><%= place.description %></p><br />
 
 		<% if place.user.present? %>
-	      <small><%= place.user.email %></small>
-	    <% end %>
-	<!-- <div/> -->    
+      <small > <%= place.user.user_name %></small>
+	  <% end %>
+ 
 
 	<div class="clear"></div>
 	    <% if place.photos.present? %>
@@ -94,7 +93,7 @@
 		        <b><%= place.comments.last.humanized_rating %></b> -
 		      <% end %>
 		      <%= place.comments.last.message %>
-		      <small><%= place.comments.last.user.email %></small>
+		      <small><%= place.comments.last.user.user_name %></small>
 		    </blockquote>
 	  	</div>
      </div> 
@@ -103,4 +102,4 @@
  </div>
 <% end %>
 
-</div>
+<!-- </div> -->
