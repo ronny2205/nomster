@@ -65,6 +65,16 @@ body {
   font-family: 'sinkin_sans200_x_light';
 }
 
+.navbar .navbar-nav>li>a:hover {
+  background-color: #94F00A;
+  color: #449d44;
+}
+
+.navbar-header>a:hover {
+  background-color: #94F00A;
+  color: #449d44;
+}
+
 .next_page, .previous_page {
   font-family: 'sinkin_sans400_regular';
 }
@@ -152,6 +162,7 @@ blockquote p {
 
 .add-restaurant {
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .text-green {
@@ -165,7 +176,7 @@ blockquote p {
  .browse-title {
    text-align: center;
    color: #449d44;
-   margin-top: 35px;
+   margin-top: 15px;
    margin-bottom: 35px;
  }
 

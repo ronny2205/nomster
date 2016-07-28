@@ -47,21 +47,33 @@
 	  </div><!-- /.container-fluid -->
 	</nav>
 
-  <div class="container">
+  
     <% if notice.present? %>
       <div class="row">
-        <p class="alert alert-success"><%= notice %></p>
+        <p class="alert alert-success text-center"><%= notice %></p>
       </div> 
     <% end %>
     <% if alert.present? %>
       <!-- <p class="alert alert-success"><%= alert %></p> -->
       <div class="row">
-        <p class="alert alert-success">Please sign in or sign up to continue</p>
+        <p class="alert alert-success text-center">Please sign in or sign up to continue.</p>
       </div>  
     <% end %>
 
+  <div class="container">
+     <div class="row">
+      <%= link_to new_place_path, :class => 'btn btn-success add-restaurant' do %>
+        Add a restaurant
+      <% end %> 
+      
+      <% if @places.present? %>
+        <span class="pull-right">
+          <%= will_paginate @places, :page_links => false %>
+        </span>
+      <% end %>  
+     </div>
 
-  <%= yield %>
+    <%= yield %>
   </div>  
 </body>
 </html>
