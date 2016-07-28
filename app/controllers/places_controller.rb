@@ -2,8 +2,22 @@ class PlacesController < ApplicationController
 	before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
 
 	def index
-		#@places = Place.all
-		 @places = Place.paginate(:page => params[:page], :per_page => 4).order('created_at ASC')
+		# Param received from sort method
+        sort_method = params[:sort_by] 
+		
+        if sort_method.present?
+		  if sort_method == 'name'
+		  	sort_str = 'name ASC'
+		  elsif sort_method == 'rating'
+		  	sort_str = 'name ASC'
+		  elsif sort_method == 'date'
+		  	sort_str = 'created_at ASC'
+		  end
+		else
+			sort_str = 'created_at ASC'
+        end
+
+		 @places = Place.paginate(:page => params[:page], :per_page => 4).order(sort_str)
 	end	
 
 	def new

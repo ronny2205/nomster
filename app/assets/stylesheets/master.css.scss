@@ -21,7 +21,7 @@
   padding:20px;
 }
 
-.booyah-box>h1>a {
+.booyah-box>div>h1>a {
   //color: #94F00A;
   color: #5cb85c;
 }
@@ -33,6 +33,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'sinkin_sans200_x_light';
 }
 
+h3>a {
+  color: #5cb85c;
+}
 
 hr {
   height: 30;
@@ -174,10 +177,13 @@ blockquote p {
 }
 
  .browse-title {
-   text-align: center;
+   //text-align: center;
    color: #449d44;
-   margin-top: 15px;
-   margin-bottom: 35px;
+ }
+
+ .title-row {
+    margin-top: 15px;
+    margin-bottom: 35px;
  }
 
  //blockquote {

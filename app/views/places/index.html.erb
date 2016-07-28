@@ -10,9 +10,34 @@
   </span>
  </div> -->
 
- <div class="row">
-  <h4 class="browse-title"> Browse through the restaurant listings or add another</h4>
- </div> 
+ <div class="row title-row">
+    <h4 class="browse-title col-xs-12 col-sm-8"> Browse through the restaurant listings or add another</h4>
+ 
+      <div class="dropdown col-xs-12 col-sm-4">
+        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sort by &nbsp;
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <!-- <li><a href="#" >Name</a></li> -->
+          <li>
+            <%= link_to root_path(:sort_by => 'name') do %>
+            Name
+            <% end %>
+          </li>  
+          <li>
+            <%= link_to root_path(:sort_by => 'rating') do %>
+              Rating
+            <% end %>
+          </li>
+          <li>
+            <%= link_to root_path(:sort_by => 'date') do %>
+            Date Added
+            <% end %>
+          </li>
+        </ul>
+      </div>
+</div> 
 
 <!-- <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> -->
   <!-- Indicators -->
@@ -57,22 +82,24 @@
 <div class="clear"></div>
 <% @places.each do |place| %>
 <div class="clear"></div>
+
 <div class="row">
- <div class="booyah-box col-xs-12 col-sm-6">
-	<h1><%= link_to place.name, place_path(place) %></h1><br />
-	
+ <div class="booyah-box col-xs-12 col-sm-8">
+
+  <div class="col-xs-12 col-sm-6">
+	  <h1><%= link_to place.name, place_path(place) %></h1><br />
 		<i><%= place.address %></i><br /><br />
 		<p><%= place.description %></p><br />
-
 		<% if place.user.present? %>
       <small > <%= place.user.user_name %></small>
 	  <% end %>
- 
+   </div>
 
-	<div class="clear"></div>
+	<!-- <div class="clear"></div> -->
 	    <% if place.photos.present? %>
-       <div class="row">
-	    	<div class="col-xs-12 col-sm-4">
+       <!-- <div class="row"> -->
+	    	<!-- <div class="col-xs-12 col-sm-4"> -->
+        <div class="col-xs-12 col-sm-4 col-sm-offset-2">
 	  			<div class="booyah-box">
 	  	  			<%= image_tag place.photos.last.picture, :class => 'img-responsive img-rounded' %>
 	  	  			<div class="clear"></div>
@@ -80,7 +107,7 @@
 	      			<b><%= place.photos.last.caption %></b>  
 	  			</div>
 			  </div>
-       </div> 
+       <!-- </div>  -->
 	    <% end %>
 	  
 
