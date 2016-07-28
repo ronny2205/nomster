@@ -49,11 +49,15 @@
 
   <div class="container">
     <% if notice.present? %>
-      <p class="alert alert-success"><%= notice %></p>
+      <div class="row">
+        <p class="alert alert-success"><%= notice %></p>
+      </div> 
     <% end %>
     <% if alert.present? %>
       <!-- <p class="alert alert-success"><%= alert %></p> -->
-      <p class="alert alert-success">Please sign in or sign up to continue</p>
+      <div class="row">
+        <p class="alert alert-success">Please sign in or sign up to continue</p>
+      </div>  
     <% end %>
 
 
