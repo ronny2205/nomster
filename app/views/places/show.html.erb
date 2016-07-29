@@ -1,5 +1,11 @@
 
 <div class="row">
+  <%= link_to new_place_path, :class => 'btn btn-success add-restaurant' do %>
+    Add a restaurant
+  <% end %>
+</div>  
+
+<div class="row">
  <div class="booyah-box col-xs-12">	
 	<h1 class="text-green"><%=  @place.name %></h1>
   <br/>

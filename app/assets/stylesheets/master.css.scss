@@ -3,9 +3,15 @@
   width: device-width;
 }
 
+//@media (min-width: 1200px) {
+//    .container{
+//        max-width: 970px;
+//    }
+//}
+
 @media (min-width: 1200px) {
     .container{
-        max-width: 970px;
+        max-width: 870px;
     }
 }
 
@@ -163,10 +169,10 @@ blockquote p {
   margin-right: auto;
 }
 
-.add-restaurant {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
+//.add-restaurant {
+//  margin-top: 20px;
+//  margin-bottom: 20px;
+//}
 
 .text-green {
    color: #94F00A;
@@ -177,13 +183,21 @@ blockquote p {
 }
 
  .browse-title {
-   //text-align: center;
    color: #449d44;
+   font-family: "Trebuchet MS", Helvetica, sans-serif;
+   font-size: 220%;
+   margin-top: 25px;
+   padding-left: 0;
  }
 
  .title-row {
-    margin-top: 15px;
-    margin-bottom: 35px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    //padding-top: 20px;
+ }
+
+ .title-button {
+   //padding-top: 15px;
  }
 
  //blockquote {

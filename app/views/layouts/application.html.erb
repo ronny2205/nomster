@@ -19,12 +19,12 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <%= link_to 'Veggie Restaurants in MA', root_path, :class => 'navbar-brand' %>
+	      <%= link_to 'Veggie Restaurants in MA', root_path(:sort_by => 'date'), :class => 'navbar-brand' %>
 	    </div>
 
     	<!-- Collect the nav links, forms, and other content for toggling -->
     	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	      <ul class="nav navbar-nav">
+	      <!-- <ul class="nav navbar-nav">
 	        <li>
       			<%= link_to new_place_path, :class => 'new-place' do %>
     				<i class="glyphicon glyphicon-plus-sign"></i>
@@ -32,7 +32,7 @@
   				<% end %>
 
     		</li>
-	      </ul>
+	      </ul> -->
 	      <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
           <li><%= link_to 'My Profile', user_path(current_user) %></li>
@@ -61,17 +61,6 @@
     <% end %>
 
   <div class="container">
-     <div class="row">
-      <%= link_to new_place_path, :class => 'btn btn-success add-restaurant' do %>
-        Add a restaurant
-      <% end %> 
-      
-      <% if @places.present? %>
-        <span class="pull-right">
-          <%= will_paginate @places, :page_links => false %>
-        </span>
-      <% end %>  
-     </div>
 
     <%= yield %>
   </div>  

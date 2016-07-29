@@ -9,6 +9,9 @@ class PlacesController < ApplicationController
 		  if sort_method == 'name'
 		  	sort_str = 'name ASC'
 		  elsif sort_method == 'rating'
+
+# @user.comments.where(:rating => '5_stars').count
+
 		  	sort_str = 'name ASC'
 		  elsif sort_method == 'date'
 		  	sort_str = 'created_at ASC'

@@ -1,5 +1,11 @@
 <!-- <div class="container">  -->
  
+<div class="row"> 
+    <div class="browse-title col-xs-12"> Browse through the restaurant listings or add another</div>
+</div>
+
+
+
  <!-- <div class="row">
   <%= link_to new_place_path, :class => 'btn btn-success add-restaurant' do %>
     Add a restaurant
@@ -11,15 +17,19 @@
  </div> -->
 
  <div class="row title-row">
-    <h4 class="browse-title col-xs-12 col-sm-8"> Browse through the restaurant listings or add another</h4>
+     <div class="title-button">
+      <%= link_to new_place_path, :class => 'btn btn-success add-restaurant col-xs-3' do %>
+        Add a restaurant
+      <% end %> 
+     </div> 
  
-      <div class="dropdown col-xs-12 col-sm-4">
+      <!-- Sort functionality -->
+      <div class="dropdown col-xs-2 title-button">
         <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Sort by &nbsp;
           <span class="caret"></span>
         </button>
         <ul class="dropdown-menu">
-          <!-- <li><a href="#" >Name</a></li> -->
           <li>
             <%= link_to root_path(:sort_by => 'name') do %>
             Name
@@ -36,6 +46,10 @@
             <% end %>
           </li>
         </ul>
+      </div>
+
+      <div class="pull-right">
+        <%= will_paginate @places, :page_links => false %>
       </div>
 </div> 
 
@@ -84,7 +98,7 @@
 <div class="clear"></div>
 
 <div class="row">
- <div class="booyah-box col-xs-12 col-sm-8">
+ <div class="booyah-box col-xs-12">
 
   <div class="col-xs-12 col-sm-6">
 	  <h1><%= link_to place.name, place_path(place) %></h1><br />
