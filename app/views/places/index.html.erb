@@ -6,14 +6,14 @@
 
  <div class="row title-row">
      <div class="title-button">
-      <%= link_to new_place_path, :class => 'btn btn-success title-padding col-xs-3' do %>
+      <%= link_to new_place_path, :class => 'btn btn-success col-xs-3' do %>
         Add a restaurant
       <% end %> 
      </div> 
  
       <!-- Sort functionality -->
       <div class="dropdown col-xs-2 title-button">
-        <button class="btn btn-success dropdown-toggle title-padding" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Sort by &nbsp;
           <span class="caret"></span>
         </button>
@@ -37,7 +37,14 @@
       </div>
 
       <div class="pull-right">
-        <%= will_paginate @places, :page_links => false %>
+
+       <!--  <%= will_paginate @places, :page_links => false %> -->
+
+
+
+        <div class="digg_pagination">
+          <%= will_paginate @places, :container => false %>
+        </div>
       </div>
 </div> 
 
