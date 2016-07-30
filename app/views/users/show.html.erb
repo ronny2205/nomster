@@ -55,20 +55,30 @@
 </div>  
 <br /><br />
 
-<div class="row"> 
+ 
 <% @user.places.each do |place| %>
-  <div class="col-xs-12 col-sm-6">
-    <div class="booyah-box">
-    <h1><%= link_to place.name, place_path(place) %></h1><br />
-    <i><%= place.address %></i><br /><br />
-    <p><%= place.description %></p><br />
+ <div class="row">
+  <div class="booyah-box col-xs-12">
 
-   <!--  <% if place.user.present? %> -->
-      <!-- <small><%= place.user.user_name %></small>
-    <% end %>
- -->
+    <div class="col-xs-12 col-sm-6">
+      <h1><%= link_to place.name, place_path(place) %></h1><br />
+      <i><%= place.address %></i><br /><br />
+      <p><%= place.description %></p><br />
+    </div>
+
+    <% if place.photos.present? %>
+        <div class="col-xs-12 col-sm-4 col-sm-offset-2">
+          <div class="booyah-box">
+              <%= image_tag place.photos.last.picture, :class => 'img-responsive img-rounded' %>
+              <div class="clear"></div>
+              <br/> 
+              <b><%= place.photos.last.caption %></b>  
+          </div>
+        </div>
+      <% end %>
+   
     <% if place.comments.present? %>
-      <div>
+      <div class="col-xs-12">
         <blockquote>
           <% if place.comments.last.humanized_rating.present? %>
             <b><%= place.comments.last.humanized_rating %></b> -
@@ -78,7 +88,8 @@
         </blockquote>
       </div>
     <% end %>
+
   </div>
- </div>
+ </div> 
 <% end %>
-</div> 
+

@@ -4,28 +4,16 @@
     <div class="browse-title col-xs-12"> Browse through the restaurant listings or add another</div>
 </div>
 
-
-
- <!-- <div class="row">
-  <%= link_to new_place_path, :class => 'btn btn-success add-restaurant' do %>
-    Add a restaurant
-  <% end %> 
-  
-  <span class="pull-right">
-    <%= will_paginate @places, :page_links => false %>
-  </span>
- </div> -->
-
  <div class="row title-row">
      <div class="title-button">
-      <%= link_to new_place_path, :class => 'btn btn-success add-restaurant col-xs-3' do %>
+      <%= link_to new_place_path, :class => 'btn btn-success title-padding col-xs-3' do %>
         Add a restaurant
       <% end %> 
      </div> 
  
       <!-- Sort functionality -->
       <div class="dropdown col-xs-2 title-button">
-        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-success dropdown-toggle title-padding" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Sort by &nbsp;
           <span class="caret"></span>
         </button>
@@ -109,7 +97,6 @@
 	  <% end %>
    </div>
 
-	<!-- <div class="clear"></div> -->
 	    <% if place.photos.present? %>
        <!-- <div class="row"> -->
 	    	<!-- <div class="col-xs-12 col-sm-4"> -->
@@ -127,7 +114,6 @@
 
 
     <% if place.comments.present? %>
-     <div class="row">
 	    <div class="col-xs-12">
 		    <blockquote>
 		      <% if place.comments.last.humanized_rating.present? %>
@@ -137,7 +123,6 @@
 		      <small><%= place.comments.last.user.user_name %></small>
 		    </blockquote>
 	  	</div>
-     </div> 
 	  <% end %>	
   </div>
  </div>
