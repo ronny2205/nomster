@@ -2,6 +2,7 @@ class PlacesController < ApplicationController
 	before_action :authenticate_user!, :only => [:new, :create, :edit, :update, :destroy]
 
 	def index
+
 		# Param received from sort method
         sort_method = params[:sort_by] 
 		
@@ -9,10 +10,7 @@ class PlacesController < ApplicationController
 		  if sort_method == 'name'
 		  	sort_str = 'name ASC'
 		  elsif sort_method == 'rating'
-
-# @user.comments.where(:rating => '5_stars').count
-
-		  	sort_str = 'name ASC'
+		  	sort_str = 'average_rate DESC'
 		  elsif sort_method == 'date'
 		  	sort_str = 'created_at ASC'
 		  end

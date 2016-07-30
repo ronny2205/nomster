@@ -102,6 +102,9 @@
 		<% if place.user.present? %>
       <small > <%= place.user.user_name %></small>
 	  <% end %>
+    <br/>
+    average is 
+   <%= place.average_rate.round(3) %>
    </div>
 
 	    <% if place.photos.present? %>
