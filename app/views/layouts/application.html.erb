@@ -8,7 +8,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<nav class="navbar navbar-inverse" role="navigation">
+  
+	<nav class="navbar" role="navigation">
   	<div class="container-fluid">
     	<!-- Brand and toggle get grouped for better mobile display -->
     	<div class="navbar-header">
@@ -18,20 +19,20 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <%= link_to 'Veggie restaurants in MA', root_path, :class => 'navbar-brand' %>
+	      <%= link_to 'Veggie Restaurants in MA', root_path(:sort_by => 'date'), :class => 'navbar-brand' %>
 	    </div>
 
     	<!-- Collect the nav links, forms, and other content for toggling -->
     	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	      <ul class="nav navbar-nav">
+	      <!-- <ul class="nav navbar-nav">
 	        <li>
       			<%= link_to new_place_path, :class => 'new-place' do %>
     				<i class="glyphicon glyphicon-plus-sign"></i>
-    				New Place
+    				Add a restaurant
   				<% end %>
 
     		</li>
-	      </ul>
+	      </ul> -->
 	      <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
           <li><%= link_to 'My Profile', user_path(current_user) %></li>
@@ -46,15 +47,22 @@
 	  </div><!-- /.container-fluid -->
 	</nav>
 
+  
+    <% if notice.present? %>
+      <div class="row">
+        <p class="alert alert-success text-center"><%= notice %></p>
+      </div> 
+    <% end %>
+    <% if alert.present? %>
+      <!-- <p class="alert alert-success"><%= alert %></p> -->
+      <div class="row">
+        <p class="alert alert-success text-center">Please sign in or sign up to continue.</p>
+      </div>  
+    <% end %>
 
-<% if notice.present? %>
-  <p class="alert alert-info"><%= notice %></p>
-<% end %>
-<% if alert.present? %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+  <div class="container">
 
-<%= yield %>
-
+    <%= yield %>
+  </div>  
 </body>
 </html>
