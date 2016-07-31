@@ -166,6 +166,13 @@
 <div class="clear"></div>
 
 <div class="row">
+<div class="col-xs-12 dark-green">
+      <% if @place.average_rate > 0 %>
+         Average rating: 
+         <%= @place.average_rate.round(3) %>
+          stars
+      <% end %>   
+</div>  
 <% @place.comments.each do |comment| %>
  
   <div class="col-xs-12 col-sm-6">
@@ -178,6 +185,6 @@
     </blockquote>
   </div>
  
-<% end %>
-<div class="row"> 
+<% end %> 
+</div> 
 

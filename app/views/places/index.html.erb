@@ -102,9 +102,6 @@
 		<% if place.user.present? %>
       <small > <%= place.user.user_name %></small>
 	  <% end %>
-    <br/>
-    average is 
-   <%= place.average_rate.round(3) %>
    </div>
 
 	    <% if place.photos.present? %>
@@ -133,7 +130,16 @@
 		      <small><%= place.comments.last.user.user_name %></small>
 		    </blockquote>
 	  	</div>
-	  <% end %>	
+	  <% end %>
+    <br/>
+
+    <div class="col-xs-12 dark-green">
+      <% if place.average_rate > 0 %>
+         Average rating: 
+         <%= place.average_rate.round(3) %>	
+          stars
+      <% end %>   
+    </div>
   </div>
  </div>
 <% end %>
