@@ -6,13 +6,13 @@
 
  <div class="row title-row">
      <div class="title-button">
-      <%= link_to new_place_path, :class => 'btn btn-success col-xs-3' do %>
+      <%= link_to new_place_path, :class => 'btn btn-success col-xs-6 col-sm-3' do %>
         Add a restaurant
       <% end %> 
      </div> 
  
       <!-- Sort functionality -->
-      <div class="dropdown col-xs-2 title-button">
+      <div class="dropdown col-xs-2 title-button col-xs-6 col-sm-3">
         <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Sort by &nbsp;
           <span class="caret"></span>
@@ -36,9 +36,9 @@
         </ul>
       </div>
 
-      <div class="pull-right">
+    <!--   <div class="pull-right col-xs-12 col-sm-5"> -->
 
-       <!--  <%= will_paginate @places, :page_links => false %> -->
+       <div class="pull-right">
 
 
 
