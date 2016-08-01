@@ -96,12 +96,12 @@
 </div> -->
 
 <div class="clear"></div>
-<div class="row">
+<!-- <div class="row">
  <% @place.photos.each do |photo| %>
 
- <div class="col-xs-12 col-sm-4">
+ <div class="col-xs-12 col-sm-4"> -->
   <!-- <div class="booyah-box"> -->
-  <div class="panel panel-default">
+  <!-- <div class="panel panel-default">
     <div class="panel-body">
   	  	<%= image_tag photo.picture, :class => 'img-responsive img-rounded img-cen' %>
   	  <div class="clear"></div>
@@ -111,9 +111,44 @@
   </div>
  </div>
  <% end %> 
+</div> -->
+
+<div class="row">
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <!-- <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol> -->
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <% @place.photos.each_with_index do |photo, i| %>
+      <% if i == 0 %>
+        <% class_str = "item active" %>
+      <% else %>
+        <% class_str = "item" %>
+      <% end %>  
+      <div class="<%= class_str %>" >
+        <%= image_tag photo.picture, :class => 'img-responsive' %>
+        <div class="carousel-caption col-sm-4">
+          <%= photo.caption %>
+        </div>
+      </div>
+    <% end %>  
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
 </div>
-
-
+</div>
 
 
 <div class="clear"></div>

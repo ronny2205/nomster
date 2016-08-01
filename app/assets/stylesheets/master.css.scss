@@ -147,16 +147,24 @@ blockquote p {
     //color: #CC660C;
    
     font-family: 'sinkin_sans200_x_light';
-    font-size: 20px;
+    font-size: 15px;
     text-shadow: rgba(0,0,0,0.95) 2px 2px;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.3);
     margin-left: auto;
     margin-right: auto;
+    
     //width: 540px;
 }
 
+//.carousel-control .carousel-control:hover {
+//  opacity: 0.1;
+//  color: black;
+//}
+
 .carousel {
   box-shadow: 0px 3px 8px #2a2a2a;
+  margin-top: 25px;
+  background-color: #449d44;
 }
 
 //.text-orange, .booyah-box a {
