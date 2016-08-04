@@ -3,22 +3,27 @@ class PlacesController < ApplicationController
 
 	def index
 
-		# Param received from sort method
-        sort_method = params[:sort_by] 
-		
-        if sort_method.present?
-		  if sort_method == 'name'
-		  	sort_str = 'name ASC'
-		  elsif sort_method == 'rating'
-		  	sort_str = 'average_rate DESC'
-		  elsif sort_method == 'date'
-		  	sort_str = 'created_at ASC'
-		  end
-		else
-			sort_str = 'created_at ASC'
-        end
+        # if params[:search]
+        # 	@places = Place.search(params[:search]).order("created_at DESC")
+        # else	
+			
+			# Param received from sort method
+        	sort_method = params[:sort_by] 
 
-		 @places = Place.paginate(:page => params[:page], :per_page => 4).order(sort_str)
+	        if sort_method.present?
+			  if sort_method == 'name'
+			  	sort_str = 'name ASC'
+			  elsif sort_method == 'rating'
+			  	sort_str = 'average_rate DESC'
+			  elsif sort_method == 'date'
+			  	sort_str = 'created_at ASC'
+			  end
+			else
+				sort_str = 'created_at ASC'
+	        end
+
+			@places = Place.search(params[:search]).paginate(:page => params[:page], :per_page => 4).order(sort_str)
+		# end	 
 	end	
 
 	def new

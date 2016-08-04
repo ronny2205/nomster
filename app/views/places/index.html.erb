@@ -45,8 +45,20 @@
         <div class="digg_pagination">
           <%= will_paginate @places, :container => false %>
         </div>
-      </div>
+      </div> 
 </div> 
+
+<%= form_tag(root_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Restaurants" %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<!-- 
+<% if @posts.present? %>
+  <%= render @places %>
+<% else %>
+  <p>There are no places containing the term(s) <%= params[:search] %>.</p>
+<% end %> -->
 
 <!-- <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> -->
   <!-- Indicators -->

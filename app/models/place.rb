@@ -9,6 +9,13 @@ class Place < ActiveRecord::Base
 	validates :name, :presence => true, :length => { :minimum => 4 }
 	validates :address, :presence => true
 	validates :description, :presence => true
+
+	def self.search(search)
+	  # where("name ILIKE ?", "%#{search}%") 
+	  # where("description ILIKE ?", "%#{search}%")
+	  where("(name ILIKE ?) OR (description ILIKE ?)", "%#{search}%", "%#{search}%")
+
+	end
 end
 
 
