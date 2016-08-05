@@ -12,7 +12,7 @@
      </div> 
  
       <!-- Sort functionality -->
-      <div class="dropdown col-xs-2 title-button col-xs-6 col-sm-3">
+      <!-- <div class="dropdown col-xs-2 title-button col-xs-6 col-sm-3">
         <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Sort by &nbsp;
           <span class="caret"></span>
@@ -34,11 +34,11 @@
             <% end %>
           </li>
         </ul>
-      </div>
+      </div> -->
 
-    <!--   <div class="pull-right col-xs-12 col-sm-5"> -->
-
-       <div class="pull-right">
+<!--       <div class="pull-right col-xs-6 col-sm-5 col-sm-offset-4">
+ -->
+      <div class="pull-right">
 
 
 
@@ -48,17 +48,54 @@
       </div> 
 </div> 
 
-<%= form_tag(root_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Restaurants" %>
-  <%= submit_tag "Search" %>
+<div class="row">
+<!--  <div class="col-lg-6"> -->
+
+<!-- Sort functionality -->
+      <div class="dropdown title-button">
+        <button class="btn btn-success col-xs-6 col-sm-2 col-sm-offset-4 dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sort by &nbsp;
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <%= link_to root_path(:sort_by => 'name') do %>
+            Name
+            <% end %>
+          </li>  
+          <li>
+            <%= link_to root_path(:sort_by => 'rating') do %>
+              Rating
+            <% end %>
+          </li>
+          <li>
+            <%= link_to root_path(:sort_by => 'date') do %>
+            Date Added
+            <% end %>
+          </li>
+        </ul>
+      </div>  
+
+  <div class="input-group">
+   <div class="col-xs-6 col-sm-6 col-lg-6">
+    <%= form_tag(root_path, :method => "get", id: "search-form") do %>
+     <span class="input-group-btn">
+        <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search for..." %>
+      
+        <%= button_tag "Go!", type: "submit", class: "btn btn-success" %>
+      </span> 
+    <% end %>
+  </div>
+ </div>
+</div>  
+
+<% if !@places.present? %>
+    <br /><br />
+    <p>There are no places containing the term <%= params[:search] %>.</p>
 <% end %>
 
-<!-- 
-<% if @posts.present? %>
-  <%= render @places %>
-<% else %>
-  <p>There are no places containing the term(s) <%= params[:search] %>.</p>
-<% end %> -->
+
+
 
 <!-- <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> -->
   <!-- Indicators -->
